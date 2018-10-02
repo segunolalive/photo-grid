@@ -65,6 +65,7 @@ img {
 
 .overlay:active > .heart {
   opacity: 1;
+  transform: rotate(45deg) scale(1.5);
 }
 
 .overlay:active ~ figcaption {
@@ -76,7 +77,7 @@ img {
   transform: rotate(45deg);
   border-radius: 0.2em;
   background-color: #fb3d48;
-  transition: opacity 0.75 ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .heart::before,
@@ -85,7 +86,6 @@ img {
   content: '';
   border-radius: 50%;
   background-color: inherit;
-  animation: opacity 0.75 ease-in-out;
   width: 3em;
   height: 3em;
 }
