@@ -1,4 +1,4 @@
-# Image Grid
+# Photo Grid
 Sample react application for my Introductory React screencast for new fellows.
 
 ![Photo Grid Screen shot](public/screenshot.jpg)
