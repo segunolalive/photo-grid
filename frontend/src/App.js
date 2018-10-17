@@ -6,9 +6,9 @@ class App extends Component {
   state = { photos: [] };
 
   async componentDidMount() {
-    fetch('http://localhost:5000/photos')
-      .then(res => res.json())
-      .then(photos => this.setState(() => ({ photos })));
+    const response = await fetch('http://localhost:5000/photos')
+    const photos = await response.json();
+    this.setState({ photos });
   }
 
   incrementLikes = (event, id) => {
@@ -34,16 +34,20 @@ class App extends Component {
       );
     });
     const imagelist = [];
-  let key = 0;
+    let key = 0;
     while (images.length) {
       imagelist.push(
         React.createElement('div', { className: 'single', key }, images.shift())
       );
       key++;
       imagelist.push(
-        React.createElement('div', { className: 'grid', key }, images.splice(0, 4))
+        React.createElement(
+          'div',
+          { className: 'grid', key },
+          images.splice(0, 4)
+        )
       );
-      key++
+      key++;
     }
     return imagelist;
   };
